@@ -1,0 +1,13 @@
+[int]$pares = 0
+[int]$impares = 0
+[int]$i = 1
+
+while ($i -le 10) {
+    [int]$num = Read-Host "Introduza o numero $i de 10"
+    if ($num % 2 -eq 0) { $pares++ }
+    else { $impares++ }
+    $i++
+}
+
+Write-Host "Pares: $pares"
+Write-Host "Ímpares: $impares"
