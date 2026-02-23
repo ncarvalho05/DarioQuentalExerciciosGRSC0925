@@ -1,17 +1,8 @@
-# Declarar variaveis
-[double]$saldoAtual = 0.0
-[double]$valorCheque = 0.0
-[bool]$podeDescontar = $false
+# Inicializar variaveis
+[int]$n1 = Read-Host "Introduza num1"
+[int]$n2 = Read-Host "Introduza num2"
+[object]$colecao = @($n1, $n2)
 
-# Atribuir valores
-$saldoAtual = Read-Host "Introduza o saldo da conta"
-$valorCheque = Read-Host "Introduza o valor do cheque"
-
-# Validar
-if ($saldoAtual -ge $valorCheque) {
-    $podeDescontar = $true
-    $saldoAtual -= $valorCheque
-    Write-Host "Cheque processado. Novo saldo: $saldoAtual"
-} else {
-    Write-Host "Saldo insuficiente. Operacao negada."
-}
+# Exibir resultados
+Write-Host "Crescente: $(($colecao | Sort-Object) -join ', ')"
+Write-Host "Decrescente: $(($colecao | Sort-Object -Descending) -join ', ')"
